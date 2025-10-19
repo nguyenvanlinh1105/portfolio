@@ -99,8 +99,12 @@
         </nav>
 
         <div class="modal-footer">
-          <a class="social small" href="#" aria-label="GitHub"><img src="@/assets/images/GitHub.png" alt=""></a>
-          <a class="social small" href="#" aria-label="LinkedIn"><img src="@/assets/images/Linkedin.png" alt=""></a>
+          <a class="social small" href="#" aria-label="GitHub"
+            ><img src="@/assets/images/GitHub.png" alt=""
+          /></a>
+          <a class="social small" href="#" aria-label="LinkedIn"
+            ><img src="@/assets/images/Linkedin.png" alt=""
+          /></a>
           <button class="btn btn-primary" @click="$emit('Liên hệ ngay')">Liên hệ ngay</button>
         </div>
       </div>
@@ -193,7 +197,7 @@ function go(item) {
 .wrap {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0, 5px;
 }
 
 /* PILL DESKTOP */
@@ -206,7 +210,7 @@ function go(item) {
   border-radius: 14px;
   background: linear-gradient(180deg, rgba(211, 244, 249, 0.72), rgba(230, 240, 255, 0.6));
   box-shadow:
-     0 10px 40px rgba(162, 225, 238, 0.32),
+    0 10px 40px rgba(162, 225, 238, 0.32),
     inset 0 1px 0 rgba(196, 194, 194, 0.2);
   backdrop-filter: blur(var(--glass));
   border: 1px solid rgba(255, 255, 255, 0.6);
@@ -231,7 +235,7 @@ function go(item) {
   color: var(--text);
   border-radius: 12px;
   padding: 8px 12px;
-  transition: 
+  transition:
     backdrop-filter 0.4s ease,
     box-shadow 0.4s ease,
     background-color 0.4s ease;
@@ -244,7 +248,7 @@ function go(item) {
   object-fit: cover;
   transition: transform 420ms;
   box-shadow: 0 6px 18px rgba(2, 6, 23, 0.08);
-  border: 3px solid #34e3e9; 
+  border: 3px solid #34e3e9;
 }
 
 .brand:hover {
@@ -258,7 +262,7 @@ function go(item) {
 }
 
 .brand:hover .brand__name {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 /* Nav */
@@ -331,7 +335,7 @@ function go(item) {
   color: var(--accent);
   background: linear-gradient(180deg, rgba(100, 234, 255, 0.8), rgba(255, 255, 255, 0.6));
   box-shadow:
-     0 10px 40px rgba(162, 225, 238, 0.6),
+    0 10px 40px rgba(162, 225, 238, 0.6),
     inset 0 1px 0 rgba(196, 194, 194, 0.2);
   backdrop-filter: blur(var(--glass));
 }
@@ -367,7 +371,7 @@ function go(item) {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: 
+  transition:
     background-color 0.3s ease,
     transform 0.3s ease,
     box-shadow 0.3s ease;
@@ -379,23 +383,22 @@ function go(item) {
   box-shadow: 0 8px 20px rgba(255, 174, 28, 0.4);
 }
 
-
 /* MOBILE HEADER */
 .mobile-header {
+  position: sticky;
+  top: 0; /* thêm để sticky hoạt động */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 12px;
+  padding: 8px 12px; /* tăng padding cho cảm giác “thoáng” hơn */
   margin: 6px 0;
-  border-radius: 14px;
-  background: linear-gradient(180deg, rgba(211, 244, 249, 0.72), rgba(230, 240, 255, 0.6));
-  box-shadow:
-    0 10px 40px rgba(162, 225, 238, 0.32),
-    inset 0 1px 0 rgba(196, 194, 194, 0.2);
-  backdrop-filter: blur(var(--glass));
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  
+  border-radius: 16px; /* bo tròn mềm mại hơn */
+  background: linear-gradient(180deg, rgba(211,244,249,0.72), rgba(230,240,255,0.6));
+  box-shadow: 0 10px 40px rgba(162,225,238,0.32), inset 0 1px 0 rgba(196,194,194,0.2);
+  backdrop-filter: blur(10px); /* trực tiếp nếu chưa dùng biến --glass */
+  z-index: 1000; /* để header luôn trên các phần tử khác */
 }
+
 .hamburger {
   display: flex;
   align-items: center;
@@ -435,7 +438,7 @@ function go(item) {
   color: var(--text);
   border-radius: 12px;
   padding: 8px 12px;
-  transition: all 0.2s ease,
+  transition: all 0.2s ease;
 }
 
 .modal-left:hover {
@@ -463,7 +466,7 @@ function go(item) {
   transform: translateY(-3px);
   background-color: rgb(204, 254, 243);
   box-shadow:
-     0 10px 40px rgba(41, 219, 255, 0.6),
+    0 10px 40px rgba(41, 219, 255, 0.6),
     inset 0 1px 0 rgba(196, 194, 194, 0.2);
   backdrop-filter: blur(var(--glass));
 }
@@ -508,7 +511,6 @@ function go(item) {
   border-radius: 10px;
   backdrop-filter: blur(3px);
   z-index: 1900;
-
 }
 
 /* SLIDE ANIMATION */
