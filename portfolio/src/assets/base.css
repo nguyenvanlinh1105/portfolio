@@ -29,6 +29,7 @@ body {
     background-color 0.5s;
   line-height: 1.6;
   font-family:
+    "Noto Sans", sans-serif,
     'Playwrite DE SAS', 'Roboto Mono', Inter,
     -apple-system,
     BlinkMacSystemFont,

@@ -23,10 +23,10 @@
   border-radius: 14px;
   background: linear-gradient(180deg, rgba(211, 244, 249, 0.72), rgba(230, 240, 255, 0.6));
   box-shadow:
-    0 10px 40px rgba(162, 225, 238, 0.32),
-    inset 0 1px 0 rgba(196, 194, 194, 0.2);
+    0 10px 50px rgba(162, 225, 238, 0.32),
+    inset 0 0px 0 rgba(196, 194, 194, 0.2);
   backdrop-filter: blur(var(--glass));
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  /* border: 1px solid rgba(255, 255, 255, 0.6); */
   min-height: 72px;
   transition: transform 320ms cubic-bezier(0.2, 0.9, 0.3, 1);
 }
@@ -55,13 +55,26 @@
 }
 
 .brand__logo {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   border-radius: 100%;
   object-fit: cover;
   transition: transform 420ms;
   box-shadow: 0 6px 18px rgba(2, 6, 23, 0.08);
-  border: 3px solid #34e3e9;
+  /* border: 3px solid #34e3e9; */
+}
+
+.brand__logo::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Đã loại bỏ calc không cần thiết và comment về 16px; nếu bạn muốn điều chỉnh kích thước, có thể dùng calc(100% + Xpx) cho viền dày hơn và điều chỉnh vị trí */
+  height: 100%;
+  border-radius: 50%;
+  background-image: linear-gradient(180deg, #ff00c8, cyan);
+  animation: animate 3s linear infinite;
+  z-index: 1;
 }
 
 .brand:hover {
@@ -72,6 +85,10 @@
 
 .brand:hover .brand__logo {
   transform: rotate(8deg) scale(1.03);
+}
+
+.brand__name {
+  font-family: 'Playwrite DE SAS';
 }
 
 .brand:hover .brand__name {
@@ -204,7 +221,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 8px 12px; /* tăng padding cho cảm giác “thoáng” hơn */
-  margin: 6px 0;
+  margin: -12px 0 0 0;
   border-radius: 16px; /* bo tròn mềm mại hơn */
   background: linear-gradient(180deg, rgba(211, 244, 249, 0.72), rgba(230, 240, 255, 0.6));
   box-shadow:
@@ -267,6 +284,7 @@
   font-weight: 800;
   font-size: 18px;
   color: var(--text);
+  font-family: 'Playwrite DE SAS';
 }
 .close-btn {
   background: transparent;
@@ -275,6 +293,8 @@
   cursor: pointer;
   border-radius: 10px;
   transition: all 0.2s ease;
+  width: 30px;
+  height: 30px;
 }
 
 .close-btn:hover {
@@ -321,10 +341,11 @@
 /* OVERLAY */
 .overlay {
   position: fixed;
+  height: 91px;
   inset: 0;
   background: rgba(2, 6, 23, 0.01);
-  border-radius: 10px;
-  backdrop-filter: blur(3px);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
   z-index: 1900;
 }
 
@@ -353,7 +374,8 @@
 }
 
 @media screen and (max-width: 1028px) {
-  .socials, .brand__name {
+  .socials,
+  .brand__name {
     display: none;
   }
 }

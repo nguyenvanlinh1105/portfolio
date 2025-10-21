@@ -103,6 +103,9 @@
           <a class="social small" href="#" aria-label="LinkedIn"
             ><img src="@/assets/images/Linkedin.png" alt=""
           /></a>
+          <a class="social small" href="#" aria-label="LinkedIn"
+            ><img src="@/assets/images/Gmail.png" alt=""
+          /></a>
           <button class="btn btn-primary" @click="$emit('Liên hệ ngay')">Liên hệ ngay</button>
         </div>
       </div>
@@ -119,4 +122,3 @@ const emit = defineEmits(['Liên hệ ngay', 'navigate'])
 const { navItems, active, isMobile, mobileModal, openModal, closeModal, go } = useHeader(emit)
 </script>
 <style src="./header.css"></style>
-

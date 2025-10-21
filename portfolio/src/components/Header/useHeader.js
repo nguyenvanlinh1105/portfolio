@@ -22,7 +22,7 @@ export function useHeader(emit) {
     checkMobile()
     window.addEventListener('resize', checkMobile)
     gsap.from('.topbar', {
-      opacity: 0,
+      // opacity: 0.9,
       y: -50,
       duration: 1.2,
       ease: 'power2.out',

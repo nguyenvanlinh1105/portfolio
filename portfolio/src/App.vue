@@ -1,11 +1,19 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import Header from './components/Header/Header.vue'
+import Card from './components/Common/ProjectItem.vue';
+import About from './components/About/About.vue';
+// import Hero from './components/Hero/Hero.vue';
 </script>
 
 <template>
   <Header></Header>
-  <RouterView />
+  <About/>
+  <!-- <Card/> -->
+  <!-- <Card/> -->
+  <!-- <Hero/> -->
+  <!-- <RouterView /> -->
+  <!-- <Card/> -->
 </template>
 
 <style scoped>
