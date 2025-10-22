@@ -125,14 +125,11 @@
 <script setup>
 // Không cần JS cho hiệu ứng này
 </script>
-
-<style >
-  :root {
+<style>
+:root {
   --electric-border-color: #6568dd;
   --electric-light-color: oklch(from var(--electric-border-color) l c h);
-  --gradient-color: oklch(
-    from var(--electric-border-color) 0.3 calc(c / 2) h / 0.4
-  );
+  --gradient-color: oklch(from var(--electric-border-color) 0.3 calc(c / 2) h / 0.4);
   --color-neutral-900: oklch(0.185 0 0);
 }
 
@@ -142,14 +139,13 @@
   box-sizing: border-box;
 }
 
-
 /* Main container */
 .main-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* height: 100vh; */
+  width: 100%; /* THÊM MỚI: Đảm bảo container co dãn */
 }
 
 /* SVG positioning */
@@ -162,20 +158,9 @@
   padding: 2px;
   border-radius: 24px;
   position: relative;
-  background: linear-gradient(
-      -30deg,
-      /* var(--gradient-color), */
-      #82dde9,
-      transparent,
-      #c0e0e4
-      /* var(--gradient-color) */
-    ),
-    linear-gradient(
-      to bottom,
-      /* var(--color-neutral-900), */
-      #6568dd,
-      /* var(--color-neutral-900) */
-    );
+  width: 100%; /* THÊM MỚI: Cho phép co dãn */
+  background:
+    linear-gradient(-30deg, #82dde9, transparent, #c0e0e4), linear-gradient(to bottom, #6568dd);
 }
 
 /* Inner container */
@@ -192,13 +177,30 @@
 }
 
 .main-card {
-  width: 300px;
-  height: 500px;
+  /* --- THAY ĐỔI QUAN TRỌNG CHO RESPONSIVE --- */
+  width: 100%; /* THAY ĐỔI: Chuyển từ 300px sang 100% */
+  aspect-ratio: 3 / 5; /* THÊM MỚI: Giữ tỷ lệ khung hình 300/500 */
+  height: auto; /* THAY ĐỔI: Bỏ chiều cao cố định */
+
   border-radius: 24px;
   border: 2px solid var(--electric-border-color);
   margin-top: -4px;
   margin-left: -4px;
   filter: url(#turbulent-displace);
+}
+
+/* --- THÊM MỚI: TỐI ƯU HIỆU SUẤT TRÊN DI ĐỘNG --- */
+@media (max-width: 768px) {
+  .main-card {
+    /* Tắt bộ lọc SVG tốn tài nguyên trên các thiết bị có màn hình nhỏ hơn 768px */
+    filter: none !important;
+  }
+
+  .glow-layer-1,
+  .glow-layer-2 {
+    /* Cũng có thể giảm hoặc tắt hiệu ứng blur để nhẹ hơn */
+    filter: blur(2px);
+  }
 }
 
 /* Glow effects */
@@ -242,13 +244,7 @@
   mix-blend-mode: overlay;
   transform: scale(1.1);
   filter: blur(16px);
-  background: linear-gradient(
-    -30deg,
-    white,
-    transparent 30%,
-    transparent 70%,
-    white
-  );
+  background: linear-gradient(-30deg, white, transparent 30%, transparent 70%, white);
 }
 
 .overlay-2 {
@@ -264,13 +260,7 @@
   mix-blend-mode: overlay;
   transform: scale(1.1);
   filter: blur(16px);
-  background: linear-gradient(
-    -30deg,
-    white,
-    transparent 30%,
-    transparent 70%,
-    white
-  );
+  background: linear-gradient(-30deg, white, transparent 30%, transparent 70%, white);
 }
 
 /* Background glow */
@@ -306,27 +296,27 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  padding: 24px; /* THAY ĐỔI: Giảm padding để phù hợp hơn với nhiều kích thước */
 }
 
 /* Content sections */
 .content-top {
   display: flex;
   flex-direction: column;
-  padding: 48px;
-  padding-bottom: 16px;
+  padding: 0; /* THAY ĐỔI: Bỏ padding ở đây vì đã có ở container */
   height: 100%;
 }
 
 .content-bottom {
   display: flex;
   flex-direction: column;
-  padding: 48px;
-  padding-top: 16px;
+  padding: 0; /* THAY ĐỔI: Bỏ padding ở đây vì đã có ở container */
 }
 
 /* Scrollbar glass component */
 .scrollbar-glass {
-  background: radial-gradient(
+  background:
+    radial-gradient(
       47.2% 50% at 50.39% 88.37%,
       rgba(255, 255, 255, 0.12) 0%,
       rgba(255, 255, 255, 0) 100%
@@ -345,7 +335,8 @@
 }
 
 .scrollbar-glass:hover {
-  background: radial-gradient(
+  background:
+    radial-gradient(
       47.2% 50% at 50.39% 88.37%,
       rgba(255, 255, 255, 0.12) 0%,
       rgba(255, 255, 255, 0) 100%
@@ -354,7 +345,7 @@
 }
 
 .scrollbar-glass::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -369,7 +360,9 @@
     rgba(255, 255, 255, 0.6) 81.89%
   );
   border-radius: inherit;
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
   mask-composite: xor;
   -webkit-mask-composite: xor;
   pointer-events: none;
@@ -377,13 +370,14 @@
 
 /* Typography */
 .title {
-  font-size: 36px;
+  font-size: clamp(24px, 5vw, 36px); /* THÊM MỚI: Font chữ co dãn */
   font-weight: 500;
   margin-top: auto;
 }
 
 .description {
   opacity: 0.5;
+  font-size: clamp(14px, 3vw, 16px); /* THÊM MỚI: Font chữ co dãn */
 }
 
 /* Divider */
@@ -394,11 +388,6 @@
   background-color: currentColor;
   opacity: 0.1;
   mask-image: linear-gradient(to right, transparent, rgb(162, 227, 244), transparent);
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent,
-    black,
-    transparent
-  );
+  -webkit-mask-image: linear-gradient(to right, transparent, black, transparent);
 }
 </style>

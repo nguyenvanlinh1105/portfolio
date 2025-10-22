@@ -196,6 +196,7 @@ onMounted(() => {
     transform 0.3s ease,
     box-shadow 0.3s ease;
   border-top: 5px solid #3498db; /* Điểm nhấn màu xanh */
+  width: 100%;
 }
 
 .project-item:hover {
@@ -262,7 +263,7 @@ onMounted(() => {
   .project-grid {
     /* Mobile: Chuyển sang 1 cột */
     grid-template-columns: 1fr;
-    gap: 20px;
+    /* gap: 20px; */
   }
 }
 </style>
