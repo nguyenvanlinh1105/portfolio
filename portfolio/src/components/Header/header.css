@@ -220,7 +220,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 12px; /* tăng padding cho cảm giác “thoáng” hơn */
+  padding: 4px 12px; /* tăng padding cho cảm giác “thoáng” hơn */
   margin: -12px 0 0 0;
   border-radius: 16px; /* bo tròn mềm mại hơn */
   background: linear-gradient(180deg, rgba(211, 244, 249, 0.72), rgba(230, 240, 255, 0.6));

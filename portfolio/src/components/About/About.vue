@@ -183,6 +183,7 @@ onMounted(() => {
 /* Tablet */
 @media (max-width: 992px) {
   .about-section {
+    padding: 30px 20px;
     min-height: 0;
   }
   .container {
@@ -219,6 +220,7 @@ onMounted(() => {
   .about-section {
     padding: 15px 15px;
     align-items: none;
+    margin-top: 20px; 
   }
 
   .container {
