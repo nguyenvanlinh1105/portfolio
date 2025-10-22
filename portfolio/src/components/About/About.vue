@@ -229,10 +229,10 @@ onMounted(() => {
   .about-content h2 {
     font-size: 2rem;
   }
-
   .about-content h3 {
     font-size: 1.2rem;
     height: 1.8rem;
+    margin-bottom: 52px;
   }
 
   .about-content p {
