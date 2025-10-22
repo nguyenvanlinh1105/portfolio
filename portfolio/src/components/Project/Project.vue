@@ -11,12 +11,15 @@
       </header>
 
       <div class="project-grid">
-        <div class="project-item">
-          <h4>Dự án Pet Shop</h4>
-          <p>Ứng dụng quản lý cửa hàng thú cưng và bán hàng trực tuyến.</p>
-          <ProjectItem />
+        <div
+        v-for="(item, index) in cards"
+        :key="index"  
+        class="project-item">
+          <h4>{{ item.h1 }}</h4>
+          <p>{{ item.subtitle }}</p>
+          <ProjectItem :card="item" />
         </div>
-        <div class="project-item">
+        <!-- <div class="project-item">
           <h4>Quản lý Cà Phê</h4>
           <p>Hệ thống POS (Point of Sale) cho cửa hàng cà phê, bao gồm quản lý kho và đơn hàng.</p>
           <ProjectItem />
@@ -25,7 +28,7 @@
           <h4>Website Cá Nhân</h4>
           <p>Portfolio cá nhân được xây dựng bằng Vue 3 và Vite.</p>
           <ProjectItem />
-        </div>
+        </div> -->
       </div>
     </div>
   </section>
@@ -78,6 +81,30 @@ const type = () => {
 onMounted(() => {
   setTimeout(type, typingSpeed)
 })
+
+const cards = [
+  {
+    h1:"Dự án Pet Shop",
+    subtitle:"Ứng dụng quản lý cửa hàng thú cưng và bán hàng trực tuyến.",
+    img: 'src/assets/images/profile.jpg',
+    title: 'Nguyễn Văn Linh',
+    desc: 'Fullstack Developer yêu thích công nghệ hiện đại'
+  },
+  {
+    h1:"Dự án quản lí quán cà phê",
+    subtitle:"Ứng dụng quản lý cửa hàng thú cưng và bán hàng trực tuyến.",
+    img: 'src/assets/images/profile.jpg',
+    title: 'Lưu Ngọc Yến Như',
+    desc: 'Frontend Developer chuyên về Vue và UI/UX'
+  },
+  {
+    h1:"Dự án App giao hàng nhanh",
+    subtitle:"Ứng dụng quản lý cửa hàng thú cưng và bán hàng trực tuyến.",
+    img: 'src/assets/images/profile.jpg',
+    title: 'Ứng dụng được phát triền trên base java sử dụng cloud để lưu trữ dữ liệu',
+    desc: 'Backend Developer chuyên về Node.js & FastAPI'
+  }
+]
 </script>
 
 <style scoped>
@@ -93,10 +120,10 @@ onMounted(() => {
     0 4px 10px rgba(186, 240, 255, 0.5),
     0 8px 20px rgba(162, 225, 238, 0.4),
     inset 0 1px 2px rgba(255, 255, 255, 0.6); */
-  padding: 50px 20px; /* Tăng padding để có không gian */
+  padding: 20px 20px; /* Tăng padding để có không gian */
   min-height: 100vh;
   display: flex;
-  margin-top: 30px;
+  /* margin-top: 30px; */
   align-items: flex-start; /* Thay đổi để nội dung dồn lên trên */
   justify-content: center;
   border-radius: 5px;
@@ -104,7 +131,7 @@ onMounted(() => {
 }
 
 .project-section:hover {
-  transform: translateY(-3px);
+  transform: translateY(-5px);
 }
 
 .container {
@@ -201,13 +228,13 @@ onMounted(() => {
 
 .project-item:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 25px rgba(52, 152, 219, 0.3);
+  box-shadow: 0 18px 25px rgba(52, 152, 219, 0.3);
 }
 
 .project-item h4 {
   font-size: 1.5rem;
   color: #1a2c4e;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   font-weight: 600;
 }
 
@@ -215,6 +242,7 @@ onMounted(() => {
   font-size: 1rem;
   color: #555;
   line-height: 1.6;
+  margin-bottom: 15px;
 }
 
 /* ==================================== */

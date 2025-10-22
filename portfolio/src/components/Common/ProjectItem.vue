@@ -109,13 +109,13 @@
       <div class="content-container">
         <div class="content-top">
           <div class="scrollbar-glass">Animated</div>
-          <p class="title">Electric Border</p>
+          <img :src="card.img" alt="Project Item" />
+          <p class="title">{{ card.title }}</p>
         </div>
 
         <hr class="divider" />
-
         <div class="content-bottom">
-          <p class="description">In case you'd like to emphasize something very dramatically.</p>
+          <p class="description">{{ card.desc }}</p>
         </div>
       </div>
     </div>
@@ -123,7 +123,12 @@
 </template>
 
 <script setup>
-// Không cần JS cho hiệu ứng này
+const props = defineProps({
+  card: {
+    type: Object,
+    required: true,
+  },
+})
 </script>
 <style>
 :root {
@@ -160,7 +165,12 @@
   position: relative;
   width: 100%; /* THÊM MỚI: Cho phép co dãn */
   background:
-    linear-gradient(-30deg, #82dde9, transparent, #c0e0e4), linear-gradient(to bottom, #6568dd);
+    linear-gradient(-30deg, #82dde9, transparent, #c0e0e4), linear-gradient(to bottom, #fff);
+}
+
+.card-container:hover {
+  background:
+    linear-gradient(-30deg, #72c3ce, transparent, #d5faff), linear-gradient(to bottom, #91c5e5);
 }
 
 /* Inner container */
@@ -179,7 +189,7 @@
 .main-card {
   /* --- THAY ĐỔI QUAN TRỌNG CHO RESPONSIVE --- */
   width: 100%; /* THAY ĐỔI: Chuyển từ 300px sang 100% */
-  aspect-ratio: 3 / 5; /* THÊM MỚI: Giữ tỷ lệ khung hình 300/500 */
+  aspect-ratio: 3 / 4.5; /* THÊM MỚI: Giữ tỷ lệ khung hình 300/500 */
   height: auto; /* THAY ĐỔI: Bỏ chiều cao cố định */
 
   border-radius: 24px;
@@ -304,9 +314,24 @@
   display: flex;
   flex-direction: column;
   padding: 0; /* THAY ĐỔI: Bỏ padding ở đây vì đã có ở container */
-  height: 100%;
+  /* height: 100%; */
 }
 
+.content-top img {
+  margin-top: 10px;
+  border-radius: 8px;
+  width: 100%;
+  max-height: 180px;
+  background-repeat: no-repeat; /* không lặp lại */
+  background-position: center; /* canh giữa */
+  background-size: cover;
+}
+
+.content-top .title {
+  font-size: 18px;
+  line-height: 20px;
+  margin-top: 10px;
+}
 .content-bottom {
   display: flex;
   flex-direction: column;
@@ -318,8 +343,8 @@
   background:
     radial-gradient(
       47.2% 50% at 50.39% 88.37%,
-      rgba(255, 255, 255, 0.12) 0%,
-      rgba(255, 255, 255, 0) 100%
+      rgba(75, 37, 200, 0.42) 0%,
+      rgba(38, 193, 100, 0.3) 100%
     ),
     rgba(255, 255, 255, 0.04);
   position: relative;
