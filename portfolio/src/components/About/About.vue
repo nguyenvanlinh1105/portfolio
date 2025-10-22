@@ -7,18 +7,15 @@
       <div class="about-content">
         <h2>About Me</h2>
         <h3>
-          Hello everyone. I'm a
+          Xin chào mọi người. Mình tên là
           <span class="typing-effect">{{ typedText }}</span>
           <span class="cursor" :class="{ typing: isTyping }">&nbsp;</span>
         </h3>
         <p>
-          Xin chào! Tôi là một nhà phát triển full-stack đam mê xây dựng các ứng dụng web đẹp, thân
-          thiện với người dùng và có hiệu suất cao. Với nền tảng về Java cho backend và React/Vue.js
-          cho frontend, tôi luôn tìm kiếm cơ hội để học hỏi và áp dụng các công nghệ mới vào công
-          việc.
+          Hiện tại mình đang là sinh viên năm 4 tại Trường Đại học Sư Phạm Kỹ Thuật, chuyên ngành Công nghệ thông tin, với niềm đam mê lập trình và sáng tạo công nghệ, mình theo đuổi vị trí Fullstack Developer, có khả năng phát triển cả ứng dụng di động lẫn ứng dụng web tối ưu và hiệu suất cao.
         </p>
         <p>
-          Mục tiêu của tôi là tạo ra những sản phẩm không chỉ giải quyết vấn đề mà còn mang lại trải
+          Mục tiêu của mình là trở thành một kỹ sư phần mềm có thể mang lại giá trị thực tế cho người dùng và doanh nghiệp thông qua công nghệ, không chỉ giải quyết vấn đề mà còn mang lại trải
           nghiệm tuyệt vời cho người dùng.
         </p>
       </div>
@@ -30,7 +27,7 @@
 import { ref, onMounted } from 'vue'
 
 // --- Cấu hình cho hiệu ứng chữ chạy ---
-const words = ref(['Nguyễn Văn Linh'])
+const words = ref(['Nguyễn Văn Linh', 'Fullstack Developer'])
 const typedText = ref('')
 const isTyping = ref(true)
 
@@ -84,9 +81,9 @@ onMounted(() => {
     linear-gradient(-30deg, #dafbff, transparent, #e6fdff), linear-gradient(to bottom, #fff, #fff);
   backdrop-filter: blur(12px);
   box-shadow:
-  0 4px 10px rgba(186, 240, 255, 0.5),
-  0 8px 20px rgba(162, 225, 238, 0.4),
-  inset 0 1px 2px rgba(255, 255, 255, 0.6);
+    0 4px 10px rgba(186, 240, 255, 0.5),
+    0 8px 20px rgba(162, 225, 238, 0.4),
+    inset 0 1px 2px rgba(255, 255, 255, 0.6);
   padding: 50px 20px;
   min-height: 100vh;
   display: flex;
@@ -120,7 +117,10 @@ onMounted(() => {
   width: 100%;
   border-radius: 15px;
   object-fit: cover;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  box-shadow:
+    0 6px 12px rgba(255, 186, 238, 0.5),
+    0 8px 30px rgba(229, 144, 211, 0.4),
+    inset 0 1px 2px rgba(255, 255, 255, 0.6);
 }
 
 .about-content {
@@ -139,7 +139,7 @@ onMounted(() => {
 .about-content h3 {
   font-size: 1.5rem;
   font-weight: 500;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   color: #2c3e50;
   height: 2.2rem; /* Đặt chiều cao cố định để không bị giật khi chữ thay đổi */
   font-family: 'Playwrite DE SAS';
@@ -208,10 +208,9 @@ onMounted(() => {
     border-radius: 50%;
     border-color: #e6fdff;
     box-shadow:
-  0 4px 10px rgba(255, 186, 238, 0.5),
-  0 8px 30px rgba(229, 144, 211, 0.4),
-  inset 0 1px 2px rgba(255, 255, 255, 0.6);
-    
+      0 4px 10px rgba(255, 186, 238, 0.5),
+      0 8px 30px rgba(229, 144, 211, 0.4),
+      inset 0 1px 2px rgba(255, 255, 255, 0.6);
   }
 }
 
@@ -220,7 +219,7 @@ onMounted(() => {
   .about-section {
     padding: 15px 15px;
     align-items: none;
-    margin-top: 20px; 
+    margin-top: 20px;
   }
 
   .container {
