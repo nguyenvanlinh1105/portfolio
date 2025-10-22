@@ -92,6 +92,11 @@ onMounted(() => {
   justify-content: center;
   backdrop-filter: blur(5px); /* Hiệu ứng blur */
   border-radius: 5px;
+  transition: all 0.3s ease-in;
+}
+
+.about-section:hover {
+  transform: translateY(-3px);
 }
 
 .container {
