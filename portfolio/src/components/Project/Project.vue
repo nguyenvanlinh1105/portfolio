@@ -11,10 +11,7 @@
       </header>
 
       <div class="project-grid">
-        <div
-        v-for="(item, index) in cards"
-        :key="index"  
-        class="project-item">
+        <div v-for="(item, index) in cards" :key="index" class="project-item">
           <h4>{{ item.h1 }}</h4>
           <p>{{ item.subtitle }}</p>
           <ProjectItem :card="item" />
@@ -82,30 +79,34 @@ onMounted(() => {
   setTimeout(type, typingSpeed)
 })
 
+import foodtrack from '@/assets/images/foodtrack.png'
+import linhhoadinh from '@/assets/images/linhhoadinh.png'
+import petshop from '@/assets/images/petshop.png'
+
 const cards = [
   {
-    h1:"🥗 FoodTrack",
-    subtitle:"Ứng dụng bán đồ ăn và đồ uống trực tuyến",
-    img: '/src/assets/images/foodtrack.png',
+    h1: '🥗 FoodTrack',
+    subtitle: 'Ứng dụng bán đồ ăn và đồ uống trực tuyến',
+    img: foodtrack, // 👉 dùng biến import
     title: '🥗🍜🍕🍔☕',
     desc: 'FoodTrack là một ứng dụng Android cho phép người dùng đặt món ăn, đồ uống nhanh chóng và tiện lợi.',
-    subdesc:'FoodTrack ứng dụng quả li bán hàng tiện lợi✅'
+    subdesc: 'FoodTrack ứng dụng quả li bán hàng tiện lợi✅',
   },
   {
-    h1:"☕ CafeLink",
-    subtitle:"Ứng dụng quản lý cửa hàng cà phê sử dụng XML và SQL Server",
-    img: '/src/assets/images/linhhoadinh.png',
+    h1: '☕ CafeLink',
+    subtitle: 'Ứng dụng quản lý cửa hàng cà phê sử dụng XML và SQL Server',
+    img: linhhoadinh,
     title: '🧋🥤🍵🍹🍺🍷🍸🧃',
-    desc: 'Ứng dụng được xây dựng nhằm giúp người quản lí dễ dàng theo dõi hoạt động kinh doanh hằng ngày, cho phép theo dõi danh mục thức uống, nhân viên, tạo và in hóa đơn nhanh chóng.'
+    desc: 'Ứng dụng được xây dựng nhằm giúp người quản lí dễ dàng theo dõi hoạt động kinh doanh hằng ngày, cho phép theo dõi danh mục thức uống, nhân viên, tạo và in hóa đơn nhanh chóng.',
   },
   {
-    h1:"🐱 PetShop",
-    subtitle:"Ứng dụng quản lý cửa hàng thú cưng và bán hàng trực tuyến.",
-    img: '/src/assets/images/petshop.png',
+    h1: '🐱 PetShop',
+    subtitle: 'Ứng dụng quản lý cửa hàng thú cưng và bán hàng trực tuyến.',
+    img: petshop,
     title: '🐶 🐱 🐰 🐹 🐦',
     desc: 'Hệ thống quản lý cửa hàng thú cưng, được phát triển hỗ trợ khách hàng và nhân viên dễ dàng quản lý các dịch vụ, thú cưng, đơn hàng, và thanh toán thông qua nền tảng web.',
-    subdesc:'PetShop giải pháp quản lý cho phòng khám thú y nhỏ & vừa'
-  }
+    subdesc: 'PetShop giải pháp quản lý cho phòng khám thú y nhỏ & vừa',
+  },
 ]
 </script>
 
@@ -253,9 +254,8 @@ const cards = [
 
 @media (max-width: 1086px) {
   .project-item {
-    padding: 15px
+    padding: 15px;
   }
-  
 }
 
 /* Tablet (max-width: 992px) */
