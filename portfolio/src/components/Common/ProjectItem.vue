@@ -108,7 +108,7 @@
 
       <div class="content-container">
         <div class="content-top">
-          <div class="scrollbar-glass">Animated</div>
+          <div class="scrollbar-glass">Detail</div>
           <img :src="card.img" alt="Project Item" />
           <p class="title">{{ card.title }}</p>
         </div>
@@ -116,6 +116,7 @@
         <hr class="divider" />
         <div class="content-bottom">
           <p class="description">{{ card.desc }}</p>
+          <p class="subdesc">{{ card.subdesc }}</p>
         </div>
       </div>
     </div>
@@ -132,7 +133,7 @@ const props = defineProps({
 </script>
 <style>
 :root {
-  --electric-border-color: #6568dd;
+  --electric-border-color: #fff;
   --electric-light-color: oklch(from var(--electric-border-color) l c h);
   --gradient-color: oklch(from var(--electric-border-color) 0.3 calc(c / 2) h / 0.4);
   --color-neutral-900: oklch(0.185 0 0);
@@ -158,19 +159,28 @@ const props = defineProps({
   position: absolute;
 }
 
-/* Card container */
+/* Card container - Sophisticated Blue */
 .card-container {
   padding: 2px;
   border-radius: 24px;
   position: relative;
-  width: 100%; /* THÊM MỚI: Cho phép co dãn */
+  color: #fff;
+  width: 100%;
   background:
-    linear-gradient(-30deg, #82dde9, transparent, #c0e0e4), linear-gradient(to bottom, #fff);
+    linear-gradient(135deg, #0c4a6e, #1e3a8a, #3730a3), linear-gradient(to bottom, #0f172a, #1e293b);
+  transition:
+    background 0.6s ease,
+    color 0.4s ease;
 }
 
 .card-container:hover {
-  background:
-    linear-gradient(-30deg, #72c3ce, transparent, #d5faff), linear-gradient(to bottom, #91c5e5);
+  cursor: pointer;
+  color: black;
+  /* background:
+    linear-gradient(135deg, #e5f7fd, #d4f1fd, #c3eafb), linear-gradient(to bottom, #e5f7fd, #d4f1fd); */
+      background:
+    linear-gradient(-30deg, #00c4ff, transparent 50%, #00e0ef),
+    linear-gradient(to bottom, #d6f5ff, #ffffff);
 }
 
 /* Inner container */
@@ -199,6 +209,24 @@ const props = defineProps({
   filter: url(#turbulent-displace);
 }
 
+.subdesc {
+  display: none;
+}
+/* Tablet  */
+@media (max-width: 1180px) {
+  .description {
+    display: none;
+  }
+}
+
+@media (max-width: 992px) {
+  .description {
+    display: block;
+  }
+  .subdesc {
+    display: none;
+  }
+}
 /* --- THÊM MỚI: TỐI ƯU HIỆU SUẤT TRÊN DI ĐỘNG --- */
 @media (max-width: 768px) {
   .main-card {
@@ -210,6 +238,10 @@ const props = defineProps({
   .glow-layer-2 {
     /* Cũng có thể giảm hoặc tắt hiệu ứng blur để nhẹ hơn */
     filter: blur(2px);
+  }
+
+  .content-container {
+    padding: 10;
   }
 }
 
@@ -306,7 +338,7 @@ const props = defineProps({
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding: 24px; /* THAY ĐỔI: Giảm padding để phù hợp hơn với nhiều kích thước */
+  padding: 20px; /* THAY ĐỔI: Giảm padding để phù hợp hơn với nhiều kích thước */
 }
 
 /* Content sections */
@@ -321,7 +353,8 @@ const props = defineProps({
   margin-top: 10px;
   border-radius: 8px;
   width: 100%;
-  max-height: 180px;
+  max-height: 160px;
+  object-fit: fill;
   background-repeat: no-repeat; /* không lặp lại */
   background-position: center; /* canh giữa */
   background-size: cover;
@@ -335,6 +368,7 @@ const props = defineProps({
 .content-bottom {
   display: flex;
   flex-direction: column;
+  font-weight: 600;
   padding: 0; /* THAY ĐỔI: Bỏ padding ở đây vì đã có ở container */
 }
 
@@ -352,7 +386,7 @@ const props = defineProps({
   border-radius: 14px;
   width: fit-content;
   height: fit-content;
-  padding: 8px 16px;
+  padding: 6px 16px;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 14px;
@@ -360,11 +394,12 @@ const props = defineProps({
 }
 
 .scrollbar-glass:hover {
+  cursor: pointer;
   background:
     radial-gradient(
       47.2% 50% at 50.39% 88.37%,
-      rgba(255, 255, 255, 0.12) 0%,
-      rgba(255, 255, 255, 0) 100%
+      rgba(219, 223, 137, 0.52) 0%,
+      rgba(71, 127, 216, 0.3) 100%
     ),
     rgba(255, 255, 255, 0.08);
 }
@@ -400,14 +435,15 @@ const props = defineProps({
   margin-top: auto;
 }
 
-.description {
+.description,
+.subdesc {
   opacity: 0.5;
   font-size: clamp(14px, 3vw, 16px); /* THÊM MỚI: Font chữ co dãn */
 }
 
 /* Divider */
 .divider {
-  margin-top: auto;
+  margin-top: 5px;
   border: none;
   height: 1px;
   background-color: currentColor;

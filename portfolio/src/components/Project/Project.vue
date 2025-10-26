@@ -84,25 +84,27 @@ onMounted(() => {
 
 const cards = [
   {
-    h1:"Dự án Pet Shop",
-    subtitle:"Ứng dụng quản lý cửa hàng thú cưng và bán hàng trực tuyến.",
-    img: 'src/assets/images/profile.jpg',
-    title: 'Nguyễn Văn Linh',
-    desc: 'Fullstack Developer yêu thích công nghệ hiện đại'
+    h1:"🥗 FoodTrack",
+    subtitle:"Ứng dụng bán đồ ăn và đồ uống trực tuyến",
+    img: 'src/assets/images/foodtrack.png',
+    title: '🥗🍜🍕🍔☕',
+    desc: 'FoodTrack là một ứng dụng Android cho phép người dùng đặt món ăn, đồ uống nhanh chóng và tiện lợi.',
+    subdesc:'FoodTrack ứng dụng quả li bán hàng tiện lợi✅'
   },
   {
-    h1:"Dự án quản lí quán cà phê",
-    subtitle:"Ứng dụng quản lý cửa hàng thú cưng và bán hàng trực tuyến.",
-    img: 'src/assets/images/profile.jpg',
-    title: 'Lưu Ngọc Yến Như',
-    desc: 'Frontend Developer chuyên về Vue và UI/UX'
+    h1:"☕ CafeLink",
+    subtitle:"Ứng dụng quản lý cửa hàng cà phê sử dụng XML và SQL Server",
+    img: 'src/assets/images/linhhoadinh.png',
+    title: '🧋🥤🍵🍹🍺🍷🍸🧃',
+    desc: 'Ứng dụng được xây dựng nhằm giúp người quản lí dễ dàng theo dõi hoạt động kinh doanh hằng ngày, cho phép theo dõi danh mục thức uống, nhân viên, tạo và in hóa đơn nhanh chóng.'
   },
   {
-    h1:"Dự án App giao hàng nhanh",
+    h1:"🐱 PetShop",
     subtitle:"Ứng dụng quản lý cửa hàng thú cưng và bán hàng trực tuyến.",
-    img: 'src/assets/images/profile.jpg',
-    title: 'Ứng dụng được phát triền trên base java sử dụng cloud để lưu trữ dữ liệu',
-    desc: 'Backend Developer chuyên về Node.js & FastAPI'
+    img: 'src/assets/images/petshop.png',
+    title: '🐶 🐱 🐰 🐹 🐦',
+    desc: 'Hệ thống quản lý cửa hàng thú cưng, được phát triển hỗ trợ khách hàng và nhân viên dễ dàng quản lý các dịch vụ, thú cưng, đơn hàng, và thanh toán thông qua nền tảng web.',
+    subdesc:'PetShop giải pháp quản lý cho phòng khám thú y nhỏ & vừa'
   }
 ]
 </script>
@@ -249,6 +251,13 @@ const cards = [
 /* RESPONSIVE DESIGN */
 /* ==================================== */
 
+@media (max-width: 1086px) {
+  .project-item {
+    padding: 15px
+  }
+  
+}
+
 /* Tablet (max-width: 992px) */
 @media (max-width: 992px) {
   .section-title {
@@ -266,7 +275,7 @@ const cards = [
   }
 
   .project-item {
-    padding: 25px;
+    padding: 15px;
   }
 }
 
