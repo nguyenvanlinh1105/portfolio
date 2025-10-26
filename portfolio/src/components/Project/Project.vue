@@ -282,8 +282,9 @@ const cards = [
 /* Mobile (max-width: 576px) */
 @media (max-width: 576px) {
   .project-section {
-    padding: 30px 15px;
+    padding: 20px 8px;
   }
+
   .container {
     padding: 20px;
     gap: 30px;

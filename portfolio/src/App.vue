@@ -7,8 +7,8 @@ import Project from './components/Project/Project.vue';
 </script>
 
 <template>
-  <Header></Header>
-  <About/>
+  <!-- <Header></Header> -->
+  <!-- <About/> -->
   <Project/>
   <!-- <Card/> -->
   <!-- <Card/> -->
